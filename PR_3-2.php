@@ -18,6 +18,4 @@ echo '<table>'
     .'<tr><td>Dearness Allownce</td><td>'.$da.'</td></tr>'
     .'<tr><td>Provinent Fund</td><td>'.$ns.'</td></tr>'
     .'</table>';
-
-
 ?>
