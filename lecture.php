@@ -1,12 +1,15 @@
+<form method="POST">
+    Date :<input name="name" placeholder="yyyy-dd-mm" type="text">
+    <button type="submit">submit</button>
+</form>
 <?php 
-$a=123456789;
-$rev=0;
-$temp=0;
-while($a>0){
-    $last=$a%10;
-    $a=$a-$last;
-    $a=$a/10;
-    $rev=$rev*10+$last;
-}
-echo $rev;
+    $pattern="/\d{4}-\d{2}-\d{2}/";
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $string=$_POST['name'];
+        if(preg_match($pattern,$string)){
+            echo "correct";
+        }else{
+            echo "incorrect";
+        }
+    }
 ?>
