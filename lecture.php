@@ -1,15 +1,16 @@
 <form method="POST">
-    Date :<input name="name" placeholder="yyyy-dd-mm" type="text">
-    <button type="submit">submit</button>
+    <input type="text" name="name">
+    <input type="number" name="roll">
+    <input type="radio" name="department" value="COMPUTER">
+    <input type="radio" name="department" value="CIVIL">
+    <input type="radio" name="department" value="MECHANIC">
+    <input type="radio" name="department" value="ELECTRICAL">
+    <input type="date" name="birth">
+    <select name="category">
+        <option value="obc">OBC</option>
+        <option value="sc/st">SC/ST</option>
+        <option value="general">GENERAL</option>
+    </select>
+    <input type="submit">
 </form>
-<?php 
-    $pattern="/\d{4}-\d{2}-\d{2}/";
-    if($_SERVER['REQUEST_METHOD']=="POST"){
-        $string=$_POST['name'];
-        if(preg_match($pattern,$string)){
-            echo "correct";
-        }else{
-            echo "incorrect";
-        }
-    }
-?>
+<?php ?>

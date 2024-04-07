@@ -10,10 +10,10 @@
 <?php  
 if($_SERVER['REQUEST_METHOD']=="POST"){    
 class book1{
-    public $Author;
-    public $name;
-    public $price;
-    public $sellingprice;
+    private $Author;
+    private $name;
+    private $price;
+    private $sellingprice;
     function putdata($author,$name,$price,$sell){
         $this->Author=$author;
         $this->name=$name;

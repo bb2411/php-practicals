@@ -1,42 +1,24 @@
 <?php 
 
-class student{
-    public $name;
-    public $enrollno;
-    public $department;
-    public $number;
-    function getdata(){
-        echo "name :".$this->name."<br>";
-        echo "enroll :".$this->enrollno."<br>";
-        echo "department :".$this->department."<br>";
-        echo "number :".$this->number."<br>";
+    interface common_1{
+        public function hello();
     }
-}
-class sem4 extends student{
-    public $cn;
-    public $ise;
-    public $iwd;
-    public $aoop;
-    function __construct($cn, $ise, $iwd, $aoop,$name,$enroll,$department,$number){
-        $this->cn=$cn;
-        $this->ise=$ise;
-        $this->iwd=$iwd;
-        $this->aoop=$aoop;
-        $this->name=$name;
-        $this->enrollno=$enroll;
-        $this->department=$department;
-        $this->number=$number;
+    interface common_2{
+        public function walk();
     }
-    function printdata(){
-        echo "cn :".$this->cn."<br>";
-        echo "ïse :".$this->ise."<br>";
-        echo "iwd :".$this->iwd."<br>";
-        echo "aoop :".$this->aoop."<br>";
+    class human implements common_1,common_2{
+        public $name;
+        public function __construct($n){
+            $this->name=$n;
+        }
+        public function hello(){
+            echo "hello from $this->name<br>";
+        }
+        public function walk(){
+            echo "$this->name is walking<br>";
+        }
     }
-}
-$a=new sem4(76,67,57,67,"bhargav",226090307004,"computer",123456789);
-$a->printdata();
-$a->getdata();
+    $a=new human("bhargav");
+    $a->hello();
+    $a->walk();
 ?>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
